@@ -1,0 +1,314 @@
+@import url(common.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html{scroll-behavior: smooth;}/* 부드럽게 움직임 */
+
+body{
+  font-family: 'Montserrat', sans-serif;/* 기본폰트 */
+  color: #333;/* 기본폰트색 */
+}
+
+/* --------------------------탑버튼---------------------------- */
+.top{
+  position: fixed;/* 고정시키겠다 */
+  right: 30px;
+  bottom: 30px;
+}
+.top a{
+  display: block;/* 바꿔주기 */
+  width: 60px;
+  height: 60px;
+  background: url(../image/top.png) no-repeat;
+  transition: 0.35s;
+}
+.top a:hover{background-image:url(../image/top_on.png);}/* 마우스 올렸을 때 */
+
+
+/* --------------------------헤더---------------------------- */
+header{/* 부모 크기 설정 */
+  width: 100%;
+  height: 80px;
+  background-color: #000;
+}
+nav{
+  width: 1200px;
+  height: inherit;
+  margin: auto;
+  display: flex;/* 가로배열하기 */
+  justify-content: space-between;/* 맨 끝쪽으로 벌리기 */
+  align-items: center;/* 영역의 가운데로 위치하게 해줌 */
+}
+.gnb{display: flex;}/* 가로배열하기 */
+.gnb li{margin: 0 15px;}/* 적당히 거리 벌려줌 */
+.gnb li a{/* 탑메뉴 꾸미기 */
+  color: #fff;
+  font-size: 18px;
+  text-transform: capitalize;/* 앞글자 대문자로 바꾸기 */
+}
+.gnb li a:hover{color: orange;}
+
+
+/* --------------------------메인---------------------------- */
+main{
+  width: 100%;
+  height: 500px;
+  background: url(../image/main.png) no-repeat center bottom fixed;
+  background-size: cover;
+}
+.caption{
+  height: inherit;/* 부모꺼 가져옴, 플렉서블로 배치하려고함 */
+  display: flex;
+  flex-direction: column;/* 방향이 세로로 바뀜, caption strong을 위한 설정 */
+  justify-content: center;
+  align-items: center;/* 메인 caption 가운데에 오게 하기 위해 사용 */
+}
+.caption h1{
+  font-family:"Century Gothic", arial;
+  color: goldenrod;
+  font-size: 70px;
+  font-weight: 100;
+  text-transform: capitalize;
+}
+.caption strong{
+  color: #ddd;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -1px;/* 글자와 글자 사이의 간격을 지정하는 속성 */
+}
+
+
+/* --------------------------셀렉션---------------------------- */
+section{
+  width: 100;
+  text-align: center;
+}
+section h2{
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;/* 전부 대문자로 바꾸기 */
+}
+section h3{
+  font-weight: 400;
+  font-size: 18px;
+  margin: 10px 0;
+  color: #777;
+}
+section>div{margin-top: 70px;}/* 셀렉션 안에 있는 div들에게 h와 div의 간격을 70px 두게 설정,'>'첫번째 div만 먹고 그 뒤의 div는 포함되지 않게 자손사용*/
+
+/* ++++++++++++++About++++++++++++ */
+.ab_num{
+  width: 100%;
+  height: 250px;
+  background-color: #eee;
+  margin-top: 30px;/* 회색칸과 본문의 사이를 띄워줌 */
+}
+.ab_num ul{
+  width: 1200px;/* 전체를 100라고 설정해줘서 본문 너비를 따로 또 정해줘야됨 */
+  margin: auto;
+  height: inherit;
+  display: flex;/* 가로배열~! */
+  justify-content: space-between;
+  align-items: center;
+}
+.ab_num ul li span:nth-child(1){ /* 아이콘 폰트, 일반형태라서(span만 사용) 차일드 사용 */
+  font-size: 60px;
+  color: #555;
+  vertical-align: top;/*위치 맞춰주기*/
+  transform: translateY(-5px);/*위치 맞춰주기2*/
+}
+.ab_num ul li span:nth-child(2){
+  font-size: 42px;
+  color: #555;
+  font-weight: 500;
+  padding-left: 15px;
+}
+.ab_num ul li span:nth-child(3){
+  display: block;/* 배열 세로로 */
+  font-size: 20px;
+  color: #666;
+  padding-left: 60px;
+}
+
+/* ++++++++++++++our skill++++++++++++ */
+.stick{
+  width: 1200px;
+  margin: 80px auto 0;
+  overflow: hidden;/* 디브에 플로트 사용해서 올라오는거 막아줌(float문제해결) */
+}
+.stick div{
+  float:left;
+  width: 48%;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 30px;
+  overflow: hidden;/* bar에서 적용한게 넘쳐서 overflow써줌 */
+}
+.stick div:nth-child(2){float: right;}/* 오른쪽꺼를 옆으로 옮겨서 간격 만들어줌 */
+.stick div p.bar1{
+  width: 85%;
+  height: 100%;
+  background-color: royalblue;
+}
+.stick div p.bar2{
+  width: 75%;
+  height: 100%;
+  background-color: yellowgreen;
+}
+.stick div p span{
+  display: block;
+  color: #fff;
+  line-height: 40px;
+  text-align: left;/* 위에 센터를 넣어놨기 때문에 설정해줌 */
+  padding-left: 25px;
+}
+
+/* ++++++++++++++our service++++++++++++ */
+.service_img{
+  width: 1200px;
+  margin: 80px auto 0;
+}
+.service_img ul{
+  justify-content: space-between;
+  display: flex;
+}
+.service_img ul li{
+  width: 280px;
+  height: 280px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ++++++++++++++our porfolio++++++++++++ */
+#porfolio{
+  width: 100%;
+  height: 1000px;
+  background-color: #ccc;
+  padding-top: 70px;
+}
+.tabmenu{/* 포트폴리오 메뉴 */
+  /* border: 1px solid red; */
+  width: 1200px;
+  height: 100px;
+  margin: auto;
+}
+.tabmenu ul{
+  height: inherit;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.tabmenu ul li:first-child{/* 하나만 반응형 상태로 놔두기 */
+  border-bottom: 2px solid #09f;
+  padding: 0 30px;
+}
+.tabmenu ul li a{
+  color: #000;
+  text-transform: capitalize;
+}
+
+.tabimg{
+  /* border: 1px solid lightcyan; */
+  width: 1200px;
+  margin: auto;
+}
+.tabimg ul{overflow: hidden;}/* float 문제해결 */
+.tabimg ul li{
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+.tabimg ul li:last-child,
+.tabimg ul li:nth-child(4){
+  margin-right: 0;
+}
+/* ++++++++++++++our team++++++++++++ */
+.team_img{
+  width: 1200px;
+  height: 450px;
+  margin: auto;
+}
+.team_img ul{
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team_img h4{
+  color:orange;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+/* ++++++++++++++our blog++++++++++++ */
+#blog{
+  height: 800px;
+  background-color: aliceblue;
+  padding-top: 70px;
+}
+.blog_img{
+  width: 1200px;
+  height: 500px;
+  margin: 60px auto 0;
+}
+.blog_img ul{
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+.btitle{
+  /* background-color: pink; */
+  width: 80%;/* 전체중 팔십프로만 쓰겠다고하는거 or 패딩으로 집어넣기도함*/
+  margin: auto;
+}
+.btitle h5{
+  color: royalblue;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin: 15px 0;
+}
+.btitle p{text-align: left;}
+.btitle a{
+  display: block;
+  margin-top:50px;
+  text-align: left;
+  text-decoration: underline;
+  color: #000;
+}
+
+/* 버튼 */
+.btn{
+  display: block;/* 수직정렬하려고 */
+  width: 200px;
+  height: 45px;
+  line-height: 45px;
+  margin: 70px auto 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.btn:hover{
+  border-color: #09f;
+  color: #09f;
+}
+
+/* --------------------------푸터---------------------------- */
+footer{
+  width: 100%;
+  height: 120px;
+  background-color: #ddd;
+  text-align: center;
+  padding-top: 50px;
+  color: #666;
+}
+address{
+  font-style: normal;
+  margin-top: 20px;
+  color: #000;
+}
+address strong{color:crimson;}
